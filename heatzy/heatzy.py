@@ -21,7 +21,7 @@ class HeatzyHandler:
                 'HGEL':{'attrs': {'mode':'fro'}},
                 'CONFORT':{'attrs': {'mode':'cft'}}
                 }}
-            'Pilote2' : {
+            'Pilote_Soc' : {
                 'OFF':{'attrs': {'mode':'stop'}},
                 'ECO':{'attrs': {'mode':'eco'}},
                 'HGEL':{'attrs': {'mode':'fro'}},
