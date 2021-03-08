@@ -7,14 +7,21 @@ class HeatzyHandler:
     API_BASE_URL = "https://euapi.gizwits.com/app"  # URL de base pour l'API Gizwits employée 
     APPID = "c70a66ff039d41b4a220e198b0fcc8b3"      # APPID Heatzy dans Gizwits 
     MODES_DECODE = {
-        'Pilote2' : {'stop' : 'OFF', 'eco' : 'ECO', 'fro' : 'HGEL', 'cft' : 'CONFORT'}, # Modes pour Pilote2
-        'Heatzy' : {'停止' : 'OFF', '经济' : 'ECO', '解冻' : 'HGEL', '舒适' : 'CONFORT'} # Modes pour Pilote Gen 1
+        'Pilote2' : {'stop' : 'OFF', 'eco' : 'ECO', 'fro' : 'HGEL', 'cft' : 'CONFORT'} # Modes pour Pilote2
+        'Heatzy' : {'停止' : 'OFF', '经济' : 'ECO', '解冻' : 'HGEL', '舒适' : 'CONFORT'}, # Modes pour Pilote Gen 1
+        'Pilote_Soc' : {'stop' : 'OFF', 'eco' : 'ECO', 'fro' : 'HGEL', 'cft' : 'CONFORT'} # Modes pour Pilote_Soc
     }
     MODES_ENCODE = {
             # Matrice d'encodage des modes pour Heatzy Pilote (Gen 1)
             'Heatzy' : {'OFF':{'raw':(1,1,3)},'ECO':{'raw':(1,1,1)},'HGEL':{'raw':(1,1,2)},'CONFORT':{'raw':(1,1,0)}},
             # Matrice d'encodage des modes pour Heatzy Pilote Gen 2
             'Pilote2' : {
+                'OFF':{'attrs': {'mode':'stop'}},
+                'ECO':{'attrs': {'mode':'eco'}},
+                'HGEL':{'attrs': {'mode':'fro'}},
+                'CONFORT':{'attrs': {'mode':'cft'}}
+                },
+            'Pilote_Soc' : {
                 'OFF':{'attrs': {'mode':'stop'}},
                 'ECO':{'attrs': {'mode':'eco'}},
                 'HGEL':{'attrs': {'mode':'fro'}},
